@@ -9,12 +9,13 @@ import { map } from 'rxjs/operators';
 import { plainToClass } from 'class-transformer';
 
 interface ClassConstructor {
-  new (...args: any[]): {}
-} 
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  new (...args: any[]): {};
+}
 
 export function Serialize(dto: ClassConstructor) {
-  return UseInterceptors(new SerializeInterceptor(dto))
-} 
+  return UseInterceptors(new SerializeInterceptor(dto));
+}
 
 export class SerializeInterceptor implements NestInterceptor {
   constructor(private dto: any) {}
@@ -26,8 +27,8 @@ export class SerializeInterceptor implements NestInterceptor {
       map((data: any) => {
         // Runs before response is sent out
         return plainToClass(this.dto, data, {
-          excludeExtraneousValues: true
-        })
+          excludeExtraneousValues: true,
+        });
       }),
     );
   }
