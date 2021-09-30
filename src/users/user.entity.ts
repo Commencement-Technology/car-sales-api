@@ -14,14 +14,14 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ default: false })
-  approved: boolean;
-
   @Column()
   email: string;
 
   @Column()
   password: string;
+
+  @Column({ default: false })
+  admin: boolean;
 
   @OneToMany(() => Report, (report) => report.user)
   reports: Report[];
