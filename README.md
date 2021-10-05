@@ -2,7 +2,7 @@
 
 ## Description
 
-App developed using Nest/Typescript with TypeORM. This app will enable users to set a car's value for selling based on car props, while the system administrator is responsible for accepting or canceling said requests.
+App developed using Nest/Typescript with TypeORM. This app has a complete authentication and authorization system, in order to enable users to input a car's props (report) and receive as output a price averaged on other reports, while only the system's admin user can accept said reports.
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
